@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula01;
+package ex01;
 
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author 828507
+ * @author Wesley Mendes
  */
 public class MyFistClassJava {
     

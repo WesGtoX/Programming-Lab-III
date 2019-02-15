@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula01;
+package ex03;
 
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author 828507
+ * @author Wesley Mendes
  */
 public class Exemplo02 {
     
@@ -22,7 +22,7 @@ public class Exemplo02 {
         valor = JOptionPane.showInputDialog("Valor 1");
         
         // Converter uma String para um double
-        v1 = Double.parseDouble(valor);
+        v1 = valor);
         
         valor = JOptionPane.showInputDialog("Valor 2");
         v2 = Double.parseDouble(valor);
