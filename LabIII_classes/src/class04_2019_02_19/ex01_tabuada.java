@@ -1,8 +1,9 @@
-package ex01;
+package class04_2019_02_19;
 
 import javax.swing.JOptionPane;
 
 /**
+ *
  * @author Wesley Mendes
  */
 public class tabuada {

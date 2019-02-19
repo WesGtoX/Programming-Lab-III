@@ -1,4 +1,4 @@
-package ex02;
+package exercises_list01;
 
 import javax.swing.JOptionPane;
 

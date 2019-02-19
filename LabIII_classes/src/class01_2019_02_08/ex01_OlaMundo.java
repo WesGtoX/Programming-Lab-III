@@ -1,3 +1,9 @@
+package class01_2019_02_08;
+
+/**
+ *
+ * @author Wesley Mendes
+ */
 public class OlaMundo {
 	
 	public static void main(String[] args) {

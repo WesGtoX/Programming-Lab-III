@@ -1,8 +1,9 @@
-package ex03;
+package class04_2019_02_19;
 
 import java.text.DecimalFormat;
 
 /**
+ *
  * @author Wesley Mendes
  */
 public class FormatadorDecimais {

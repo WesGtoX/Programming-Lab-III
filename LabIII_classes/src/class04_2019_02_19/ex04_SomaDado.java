@@ -1,9 +1,10 @@
-package ex04;
+package class04_2019_02_19;
 
 import javax.swing.*;
 import java.util.Random;
 
 /**
+ *
  * @author Wesley Mendes
  */
 public class SomaDado {

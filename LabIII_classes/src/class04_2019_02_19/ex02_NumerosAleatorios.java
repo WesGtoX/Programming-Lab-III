@@ -1,6 +1,7 @@
-package ex02;
+package class04_2019_02_19;
 
 /**
+ *
  * @author Wesley Mendes
  */
 public class NumerosAleatorios {

@@ -1,4 +1,4 @@
-package ex02;
+package class03_2019_02_15;
 
 import javax.swing.JOptionPane;
 
