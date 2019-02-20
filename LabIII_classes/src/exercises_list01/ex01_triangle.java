@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Wesley Mendes
  */
 
-public class triangle {
+public class ex01_triangle {
 
     public static void main(String[] args) {
 

@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-public class Exemplo01 {
+public class ex02_Exemplo01 {
     
     public static void main(String[] args) {
         

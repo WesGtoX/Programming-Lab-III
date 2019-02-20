@@ -4,7 +4,7 @@ package class04_2019_02_19;
  *
  * @author Wesley Mendes
  */
-public class NumerosAleatorios {
+public class ex02_NumerosAleatorios {
 
     public static void main(String[] args) {
 

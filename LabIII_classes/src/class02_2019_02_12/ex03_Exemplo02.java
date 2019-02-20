@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-public class Exemplo02 {
+public class ex03_Exemplo02 {
     
     public static void main(String[] args) {
         
@@ -17,7 +17,7 @@ public class Exemplo02 {
         valor = JOptionPane.showInputDialog("Valor 1");
         
         // Converter uma String para um double
-        v1 = valor);
+        v1 = Double.parseDouble(valor);
         
         valor = JOptionPane.showInputDialog("Valor 2");
         v2 = Double.parseDouble(valor);

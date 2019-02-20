@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-public class calculatorIMC {
+public class ex01_calculatorIMC {
 
     public static void main(String[] args) {
 

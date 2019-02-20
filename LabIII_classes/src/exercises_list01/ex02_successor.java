@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 /**
  * @author Wesley Mendes
  */
-public class successor {
+public class ex02_successor {
 
     public static void main(String[] args) {
 

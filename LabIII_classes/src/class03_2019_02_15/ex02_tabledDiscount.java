@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-public class tabledDiscount {
+public class ex02_tabledDiscount {
 
     public static void main(String[] args) {
 

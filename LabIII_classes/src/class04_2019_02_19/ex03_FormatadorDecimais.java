@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
  *
  * @author Wesley Mendes
  */
-public class FormatadorDecimais {
+public class ex03_FormatadorDecimais {
 
     public static void main(String[] args) {
 

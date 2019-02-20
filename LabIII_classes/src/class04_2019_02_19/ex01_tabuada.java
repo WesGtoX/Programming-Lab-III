@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-public class tabuada {
+public class ex01_tabuada {
 
     public static void main(String[] args) {
 

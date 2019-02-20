@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author Wesley Mendes
  */
-public class SomaDado {
+public class ex04_SomaDado {
 
     public static void main(String[] args) {
 
