@@ -21,6 +21,5 @@ public class ex01_vetor {
         for(double valor: vet) {
             System.out.println(valor);
         }
-
     }
 }
