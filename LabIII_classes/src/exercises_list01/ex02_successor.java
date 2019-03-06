@@ -19,5 +19,4 @@ public class ex02_successor {
         JOptionPane.showMessageDialog(null,
                 String.format("Sucessor: %.0f\nAntecessor: %.0f", sucessor, antecessor));
     }
-
 }

@@ -24,7 +24,7 @@ public class Numero {
     @Override
     public String toString() {
         return String.format(
-                "Raiz Quadrada: %.1f\nAo quadrado: %.1f\nAo cubo: %.1f",
+                "Raiz Quadrada: %.1f\nAo Quadrado: %.1f\nAo Cubo: %.1f",
                 raiz(), square(), cubo()
         );
     }
