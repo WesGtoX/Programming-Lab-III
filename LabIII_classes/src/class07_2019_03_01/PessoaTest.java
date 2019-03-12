@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * @author Wesley Mendes
  */
-public class PessoaTeste {
+public class PessoaTest {
 
     public static void main(String[] args) {
 

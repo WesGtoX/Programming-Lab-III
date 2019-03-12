@@ -3,7 +3,7 @@ package class07_2019_03_01;
 /**
  * @author Wesley Mendes
  */
-public class BombaTeste {
+public class BombaTest {
 
     public static void main(String[] args) {
 

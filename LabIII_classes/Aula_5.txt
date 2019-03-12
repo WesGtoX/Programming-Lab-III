@@ -1,0 +1,10 @@
+Orientação Voltada a objetos
+
+ Objetos->basimente é caracteristicas(atributos)
+		 e seus compotamentos(Metodos) dentro do sistema
+
+Classe->especificação(modelo)
+	para criação de objeto
+
+Classe é o codigo fonte
+
