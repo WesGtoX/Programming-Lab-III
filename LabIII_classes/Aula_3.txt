@@ -1,11 +1,18 @@
-Contatenação em java pode ser visto com o sinal de ''+'' que para string faz a junção das strings.
-Exemplo:
-S1="abc"
-S2="edf"
-S3=S1+S2{S3="abcdef"}o final de += tambem serve para fazer a concatenação.
----------------------------------------------------------------------------------------------------------------------------
-Classe MATH
-escrito como math. ira mostrar todas as possibilidades
+Contatenação em Java pode ser visto com o sinal de "+" que para string faz a junção das strings.
 
-Metodo random
-math.Randon()
+Exemplo:
+    S1 = "abc"
+    S2 = "edf"
+    S3 = S1 + S2
+    // S3 = "abcdef"
+
+O final de "+=" também serve para fazer a concatenação.
+
+----------------------------------------------------------------------------------------------------
+
+Classe MATH
+
+Escrito como math. ira mostrar todas as possibilidades.
+
+Método random
+    Math.randon()

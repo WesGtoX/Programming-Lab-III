@@ -1,10 +1,8 @@
-Orientação Voltada a objetos
+Object-Oriented Programming (OOP)
 
- Objetos->basimente é caracteristicas(atributos)
-		 e seus compotamentos(Metodos) dentro do sistema
+Objetos -> basimente é caracteristicas (atributos) e seus comportamentos (Métodos) dentro do sistema.
 
-Classe->especificação(modelo)
-	para criação de objeto
+Classe -> especificação (modelo) para criação de objeto.
 
-Classe é o codigo fonte
+Classe é o código fonte.
 

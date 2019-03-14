@@ -1,8 +1,11 @@
 Encapsulamento 
-ocultação de dados ao usuario como por exemplo:
-Voce informar o ate qual ano é aceito o carro ,e quando o usuraio digitar e nao estiver entre esses anos aparecer uma mensagem com os dizeres que é impossibilitado de fazer aquela ação.
+
+Ocultação de dados ao usuário como por exemplo:
+
+Você informar o ate qual ano é aceito o carro, e quando o usuraio digitar e não estiver entre estes anos aparecer uma mensagem com os dizeres que é impossibilitado de fazer aquela ação.
 
 
-Visibilidade 
-Public->Seria como uma global sua representividade é com sinal de +
-Private->Como uma variavel que possui em apenas um local
+Visibilidade
+
+Public -> Seria como uma global sua representividade é com sinal de "+".
+Private -> Como uma variavel que possui em apenas um local.
