@@ -1,0 +1,16 @@
+Linguagem Java
+
+public class        - tem que possuir mesmo nome da classe
+                      "public class nomedaclasse() {}"
+
+- Todos os nomes começam com uma letra maiscula na nomeação das classes.
+
+- public static void main
+
+Na linguagem Java letras maiusculas sempre devem comçar seu programa.
+
+JOptionPane         - serve para mostrar mensagem na tela ou mudar nome da mensagem.
+
+Nome de variavel sempre minusculo.
+
+O uso do caracter "+" serve para literalmente adicionar mais informações.

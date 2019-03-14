@@ -1,8 +1,0 @@
-Object-Oriented Programming (OOP)
-
-Objetos -> basimente é caracteristicas (atributos) e seus comportamentos (Métodos) dentro do sistema.
-
-Classe -> especificação (modelo) para criação de objeto.
-
-Classe é o código fonte.
-

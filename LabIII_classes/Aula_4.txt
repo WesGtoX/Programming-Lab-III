@@ -1,7 +1,0 @@
-for (double valor:vet)
-
-É um tipo de repetição que serve para mostrar todos os dados que estão atirbuídos a "vet" de forma linear.
-
-Para se utilizar de uma junção em Java basta escrever.
-
-public static void (porem pode alterar para algum tipo de variável tipo int, double, float, etc...) nome da função (String[] args) {}
