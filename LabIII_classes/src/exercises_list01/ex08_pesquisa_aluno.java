@@ -12,8 +12,6 @@ public class ex08_pesquisa_aluno {
         String answer, aluno;
         double peso, altura;
 
-
-
         do {
             aluno = JOptionPane.showInputDialog("Nome do aluno:");
             peso = Double.parseDouble(JOptionPane.showInputDialog("Peso do aluno:"));
