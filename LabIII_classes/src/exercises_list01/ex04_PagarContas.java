@@ -5,6 +5,11 @@ import javax.swing.*;
 /**
  * @author Wesley Mendes
  */
+/*
+4. Um trabalhador recebeu seu salário mensal, porém precisa pagar as contas de água, luz e telefone.
+Escreva um algoritmo que solicite ao usuário o salário e os valores das contas de água, luz e telefone.
+Em seguida, calcule e apresente na tela quanto sobrou para o trabalhador após o pagamento das contas.
+ */
 public class ex04_PagarContas {
 
     public static void main(String[] args) {

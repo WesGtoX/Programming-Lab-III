@@ -5,6 +5,12 @@ import javax.swing.*;
 /**
  * @author Wesley Mendes
  */
+/*
+6. Escreva uma classe que leia uma sequencia indeterminada de números inteiros maiores que zero. Apresente na tela:
+a. O total de números pares.        b. O total de números ímpares       c. A média dos números
+d. O maior número                   e. O menor número
+O programa deverá terminar a execução quando o valor zero for digitado pelo usuário.
+ */
 public class ex06_sequencia {
 
     public static void main(String[] args) {

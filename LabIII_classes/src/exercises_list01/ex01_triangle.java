@@ -6,7 +6,10 @@ import javax.swing.JOptionPane;
  *
  * @author Wesley Mendes
  */
-
+/*
+1. Construa uma classe que calcule a área de um triângulo. Lembre-se de que para
+realizar esse cálculo é necessário utilizar a fórmula: Área = (base * altura) / 2.
+ */
 public class ex01_triangle {
 
     public static void main(String[] args) {

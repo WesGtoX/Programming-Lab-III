@@ -5,6 +5,11 @@ import javax.swing.*;
 /**
  * @author Wesley Mendes
  */
+/*
+3. Escreva uma classe que receba um número inteiro positivo e maior que zero.
+Assim, calcule e apresente na tela:
+a) a raiz quadrada do número;   b) o número ao quadrado;    c) o número ao cubo.
+ */
 public class ex03_numero {
 
     public static void main(String[] args) {

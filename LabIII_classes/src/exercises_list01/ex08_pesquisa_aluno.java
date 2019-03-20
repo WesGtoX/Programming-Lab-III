@@ -5,6 +5,15 @@ import javax.swing.*;
 /**
  * @author Wesley Mendes
  */
+/*
+8. Uma escola deseja realizar uma pesquisa sobre o peso e altura de seus alunos.
+Para isso, você deverá elaborar uma classe que receba essas informações de um número
+indeterminado de alunos. Ao final, apresente na tela a quantidade de alunos com:
+f. Altura inferior a 1.50m.                          g. Peso superior a 90kg.
+h. Peso inferior a 50kg e altura superior a 1.80m.   i. Peso superior a 100kg e altura inferior a 1.50m.
+A classe deverá exibir uma mensagem do tipo “Deseja continuar (S,N)?”,
+em que a execução terminará apenas quando a resposta for igual a ‘N’.
+ */
 public class ex08_pesquisa_aluno {
 
     public static void main(String[] args) {
@@ -35,7 +44,7 @@ public class ex08_pesquisa_aluno {
 
             answer = JOptionPane.showInputDialog("Deseja continuar (S,N)?");
 
-        } while (answer.equals("S"));
+        } while (!answer.equals("n"));
 
         System.out.println(
                 "Alunos com Altura inferior a 1.50m: " + a + "\n" +
