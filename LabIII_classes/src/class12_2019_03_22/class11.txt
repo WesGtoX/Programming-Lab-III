@@ -1,0 +1,13 @@
+Herança --> |- Pai/Filho
+            |- Superclasse / Subclasse (Python, C++, Java)
+            |- Classe Base / Classe Derivada (.NET)
+
+- Reuso de Software
+- Classes herdam de outras classes --> |- Atributo
+                                       |- Métodos
+
+- Tipos --> |- Simples: filho herda de um único pai/superclasse.
+            |- Multipla: filho herda de mais de um pai/superclasse.
+
+- Classe Object está present como superclasse implicitamente em Java e também outras linguagens.
+  public class Classe extends Objetcts {}
