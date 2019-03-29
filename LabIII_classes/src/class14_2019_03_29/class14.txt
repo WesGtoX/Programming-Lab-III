@@ -1,0 +1,8 @@
+Classe Abstrata
+
+- Especificam uma classe que não poderá ser instanciada
+
+- Precisa ser obrigatoriamente herdada
+
+- Definir métodos abstratos
+  public abstract void cadastrar();

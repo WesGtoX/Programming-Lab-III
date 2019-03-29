@@ -1,0 +1,5 @@
+Interface
+
+- Uma interface é composta por:
+    - Constantes (final)
+    - Métodos Abstratos
