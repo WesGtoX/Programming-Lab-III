@@ -14,7 +14,6 @@ public class Brinquedo {
         this.nome = "NÃO DEFINIDO";
         this.faixaEtaria = "NÃO DEFINIDO";
         this.preco = 0;
-
     }
 
     // Construtor sobrecarregado

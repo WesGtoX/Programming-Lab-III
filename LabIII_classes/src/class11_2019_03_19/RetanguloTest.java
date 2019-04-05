@@ -18,7 +18,7 @@ public class RetanguloTest {
         Retangulo ret2 = new Retangulo(12,15);
         System.out.println(ret2);
 
-        // Lista DinÂmica de Retângulo
+        // Lista Dinâmica de Retângulo
         // cria uma lista dinâmica em que cada elemento será um objeto da classe 'Retangulo'
         List<Retangulo> lista = new ArrayList<>();      // cria lista vazia
 
