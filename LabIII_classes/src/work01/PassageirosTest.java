@@ -11,6 +11,9 @@ public class PassageirosTest {
 
         String condicao;
         int option;
+        int city=0, pass=0;
+        Passageiros passageiro[] = new Passageiros[10];
+        Cidades cidade[] = new Cidades[10];
 
         do {
             option = Integer.parseInt(JOptionPane.showInputDialog("" +
@@ -28,13 +31,22 @@ public class PassageirosTest {
             switch(option) {
                 case 1 : {
                     do {
-
+                        passageiro[pass] = new Passageiros(
+                                JOptionPane.showInputDialog("Informe o nome do Passageiro"),
+                                JOptionPane.showInputDialog("Informe o CPF do Passageiro")
+                        );
+                        ++pass;
                         condicao = JOptionPane.showInputDialog("Deseja cadastrar outro passageiro? <S|N>");
                     } while (condicao.toUpperCase().equals("S"));
                 }
                 case 2 : {
-                    do {
 
+                    do {
+                        cidade[city] = new Cidades(
+                                JOptionPane.showInputDialog("Informe a Cidade"),
+                                JOptionPane.showInputDialog("Informe o Estado")
+                        );
+                        ++city;
                         condicao = JOptionPane.showInputDialog("Deseja cadastrar outra cidade? <S|N>");
                     } while (condicao.toUpperCase().equals("S"));
                 }
@@ -50,15 +62,22 @@ public class PassageirosTest {
                         condicao = JOptionPane.showInputDialog("Deseja cancelar outra passagem? <S|N>");
                     } while(condicao.toUpperCase().equals("S"));
                 }
-                case 5 : {}
-                case 6 : {}
+                case 5 : {
+                    for (Passageiros p : passageiro) {
+                        System.out.println(p);
+                    }
+                }
+                case 6 : {
+                    for (Cidades c : cidade) {
+                        System.out.println(c);
+                    }
+                }
                 case 7 : {}
                 case 8 : {
                     JOptionPane.showMessageDialog(null,
-                            String.format(
-                                    "Código: 828507\n" +
+                            "Código: 828507\n" +
                                     "Aluno: Wesley de Oliveira Mendes\n" +
-                                    "Data de Entrega: 22/04/2019"));
+                                    "Data de Entrega: 22/04/2019");
                 }
             }
 
