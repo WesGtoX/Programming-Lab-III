@@ -6,7 +6,7 @@ package work01;
 public class Passageiros extends Pessoa {
 
     public Passageiros() {
-        this("","");
+        super("","");
     }
 
     public Passageiros(String nome, String cpf) {
@@ -25,8 +25,7 @@ public class Passageiros extends Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() + "\n" +
-                "CPF: " + getCpf() + "\n";
+        return super.toString();
     }
 
 }

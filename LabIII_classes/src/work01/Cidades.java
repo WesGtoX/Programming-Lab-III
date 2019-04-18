@@ -28,11 +28,17 @@ public class Cidades {
         this.cidade = cidade;
     }
 
-    public String getEstado(String estado) {
+    public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Cidade: " + getCidade() + "\n" +
+                "Estado: " + getEstado().toUpperCase() + "\n";
     }
 }
