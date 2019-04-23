@@ -5,39 +5,23 @@ package work01;
  */
 public class Onibus {
 
+    private int lin;
+    private int col;
     private boolean poltrona[][] = new boolean[4][10];
-    private double lin;
-    private double col;
 
     public Onibus() {
-        this(false, 0, 0);
+        poltrona[0][0] = false;
     }
 
-    public Onibus(boolean poltrona, int lin, int col) {
-        this.poltrona[lin][col] = false;
+    public Onibus(int lin, int col) {
+        poltrona[lin][col] = true;
     }
 
-    public boolean[][] getPoltrona() {
-        return poltrona;
+    public boolean getPoltrona(int lin, int col) {
+        return poltrona[lin][col];
     }
 
-    public void setPoltrona(boolean[][] poltrona) {
-        this.poltrona = poltrona;
-    }
-
-    public double getLin() {
-        return lin;
-    }
-
-    public void setLin(double lin) {
-        this.lin = lin;
-    }
-
-    public double getCol() {
-        return col;
-    }
-
-    public void setCol(double col) {
-        this.col = col;
+    public void setPoltrona(int lin, int col) {
+        this.poltrona[lin][col] = true;
     }
 }

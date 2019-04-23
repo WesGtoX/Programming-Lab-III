@@ -17,9 +17,6 @@ public class Cidades {
         this.estado = estado;
     }
 
-    public Cidades(String informe_o_nome_da_cidade) {
-    }
-
     public String getCidade() {
         return cidade;
     }
