@@ -191,7 +191,8 @@ public class FormLogin extends javax.swing.JFrame {
         String email = JOptionPane.showInputDialog("Informe o seu e-mail");
         
         JOptionPane.showMessageDialog(null, 
-            "Uma mensagem foi enviada para " + email + " com as instruções para recuperar a senha.", "Login",
+            "Uma mensagem foi enviada para " + email + " com as instruções para recuperar a senha.", 
+            "Login",
             JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnEsqueceuSenhaActionPerformed
 
