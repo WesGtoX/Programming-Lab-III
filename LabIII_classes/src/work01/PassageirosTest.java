@@ -5,8 +5,6 @@ import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static javafx.application.Platform.exit;
-
 /**
  * @author Wesley Mendes
  */
@@ -286,10 +284,10 @@ public class PassageirosTest {
                 }
                 // sair
                 case 0 : {
-                    exit();
+                    System.exit(1);
                 }
             }
-        } while(option != 0);
+        } while(true);
     }
 
 
