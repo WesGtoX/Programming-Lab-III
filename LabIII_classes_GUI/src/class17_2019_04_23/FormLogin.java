@@ -11,7 +11,7 @@ import java.awt.Cursor;
 
 /**
  *
- * @author wesley
+ * @author Wesley Mendes
  */
 public class FormLogin extends javax.swing.JFrame {
 
