@@ -10,6 +10,9 @@ import java.util.Collections;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -53,10 +56,14 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         scpProfissao = new javax.swing.JScrollPane();
         lstProfissao = new javax.swing.JList<>();
-        jSeparator1 = new javax.swing.JSeparator();
         btnNovo = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
         tabCadastrar = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblClientes = new javax.swing.JTable();
+        lblPesquisar = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         tabGerenciar = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,51 +109,57 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         btnNovo.setText("Novo");
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tabPesquisarLayout = new javax.swing.GroupLayout(tabPesquisar);
         tabPesquisar.setLayout(tabPesquisarLayout);
         tabPesquisarLayout.setHorizontalGroup(
             tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabPesquisarLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addContainerGap()
                 .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tabPesquisarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnSalvar))
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(tabPesquisarLayout.createSequentialGroup()
-                        .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblProfissao)
-                            .addComponent(scpProfissao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefoneFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTelefoneFixo)
-                            .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblTelefoneCelular)
-                                .addComponent(lblEmail)
-                                .addComponent(txtTelefoneCelular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(cbxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(tabPesquisarLayout.createSequentialGroup()
                         .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSexo)
-                            .addComponent(lblId))
-                        .addGap(191, 191, 191)
-                        .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNome)
-                            .addComponent(lblEscolaridade)
-                            .addComponent(cbxEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jSeparator1))
-                .addContainerGap())
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tabPesquisarLayout.createSequentialGroup()
+                                .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSexo)
+                                    .addComponent(lblId))
+                                .addGap(191, 191, 191)
+                                .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblNome)
+                                    .addComponent(lblEscolaridade)
+                                    .addComponent(cbxEscolaridade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(tabPesquisarLayout.createSequentialGroup()
+                                .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblProfissao)
+                                    .addComponent(scpProfissao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25)
+                                .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(tabPesquisarLayout.createSequentialGroup()
+                                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtTelefoneFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTelefoneFixo)
+                                    .addComponent(lblTelefoneCelular)
+                                    .addComponent(lblEmail)
+                                    .addComponent(txtTelefoneCelular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(7, 7, 7))
         );
         tabPesquisarLayout.setVerticalGroup(
             tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabPesquisarLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap()
                 .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblId)
                     .addComponent(lblNome))
@@ -179,26 +192,63 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(scpProfissao, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovo)
                     .addComponent(btnSalvar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         tabPrincipal.addTab("Cadastrar", tabPesquisar);
+
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblClientes);
+
+        lblPesquisar.setText("Pesquisar");
+
+        jTextField1.setPreferredSize(new java.awt.Dimension(150, 25));
 
         javax.swing.GroupLayout tabCadastrarLayout = new javax.swing.GroupLayout(tabCadastrar);
         tabCadastrar.setLayout(tabCadastrarLayout);
         tabCadastrarLayout.setHorizontalGroup(
             tabCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCadastrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabCadastrarLayout.createSequentialGroup()
+                        .addComponent(lblPesquisar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         tabCadastrarLayout.setVerticalGroup(
             tabCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 408, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabCadastrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPesquisar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tabPrincipal.addTab("Pesquisar", new javax.swing.ImageIcon("/home/wesley/ESCOLA/FACULDADE/UNAERP/Stage 04 – 2019-1/Laboratório de Programação III/Aulas/Programming-Lab-III/LabIII_classes_GUI/src/imagens/search.png"), tabCadastrar); // NOI18N
@@ -207,11 +257,11 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         tabGerenciar.setLayout(tabGerenciarLayout);
         tabGerenciarLayout.setHorizontalGroup(
             tabGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
+            .addGap(0, 453, Short.MAX_VALUE)
         );
         tabGerenciarLayout.setVerticalGroup(
             tabGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 408, Short.MAX_VALUE)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Gerenciar", tabGerenciar);
@@ -237,6 +287,55 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+        //Adicionar dados na TABELA
+        DefaultTableModel m =
+                (DefaultTableModel)tblClientes.getModel();
+        
+        m.addRow(new Object[] {
+            m.getRowCount() + 1,                // Id
+            txtNome.getText(),                  // Nome
+            cbxSexo.getSelectedItem(),          // Sexo
+            cbxEscolaridade.getSelectedItem(),  // Escolaridade
+            lstProfissao.getSelectedValue(),    // Profissão
+            txtTelefoneFixo.getText(),          // Telefone Fixo
+            txtTelefoneCelular.getText(),       // Telefone Celular
+            txtEmail.getText(),                 // E-mail
+        });
+        tblClientes.setModel(m);
+        
+        JOptionPane.showMessageDialog(null,
+                "Operação realizada com Sucesso!"
+        );
+        
+        txtNome.setText("");
+        cbxSexo.setSelectedItem(0);
+        cbxEscolaridade.setSelectedItem("");
+        lstProfissao.setSelectedIndex(0);
+        txtTelefoneFixo.setText("");
+        txtTelefoneCelular.setText("");
+        txtEmail.setText("");
+        
+        tabPrincipal.setSelectedIndex(1);
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        
+        int lin = tblClientes.getSelectedRow();
+        if (lin >= 0) {
+            
+            txtId.setText(tblClientes.getValueAt(lin, 0).toString());
+            txtNome.setText(tblClientes.getValueAt(lin, 1).toString());
+            cbxSexo.setSelectedItem(tblClientes.getValueAt(lin, 2).toString());
+            cbxEscolaridade.setSelectedItem(tblClientes.getValueAt(lin, 3).toString());
+            lstProfissao.setSelectedValue(tblClientes.getValueAt(lin, 4), true);
+            txtTelefoneFixo.setText(tblClientes.getValueAt(lin, 5).toString());
+            txtTelefoneCelular.setText(tblClientes.getValueAt(lin, 6).toString());
+            txtEmail.setText(tblClientes.getValueAt(lin, 7).toString());
+        }
+    }//GEN-LAST:event_tblClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -278,11 +377,14 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxSexo;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEscolaridade;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblPesquisar;
     private javax.swing.JLabel lblProfissao;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefoneCelular;
@@ -293,6 +395,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JPanel tabGerenciar;
     private javax.swing.JPanel tabPesquisar;
     private javax.swing.JTabbedPane tabPrincipal;
+    private javax.swing.JTable tblClientes;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
@@ -311,6 +414,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         preencherComboSexo();
         preencherEscolaridade();
         preencherListaProfissoes();
+        
+        configurarTabela();
+        txtId.setEditable(false);
     }
     
     private void preencherComboSexo() {
@@ -332,6 +438,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         
         DefaultComboBoxModel m = new DefaultComboBoxModel(escolaridade);
         cbxEscolaridade.setModel(m);
+        
+        //Definir "Ensino Superior" como selecionado
+        cbxEscolaridade.setSelectedIndex(2);
     }
     
     private void preencherListaProfissoes() {
@@ -367,6 +476,30 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             m.addElement(s);
         }
         lstProfissao.setModel(m);
+        
+        //Definir o Modo de seleção
+        lstProfissao.setSelectedIndex(
+            ListSelectionModel.SINGLE_SELECTION
+        );
+    }
+    
+    private void configurarTabela() {
+        DefaultTableModel m = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int colum) {
+                return false;
+            }
+        };
+        
+        m.addColumn("Id");
+        m.addColumn("Nome");
+        m.addColumn("Sexo");
+        m.addColumn("Escolaridade");
+        m.addColumn("Profissão");
+        m.addColumn("Tel.Fixo");
+        m.addColumn("Tel.Celular");
+        m.addColumn("Email");
+        tblClientes.setModel(m);
     }
 
 }
