@@ -331,6 +331,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 "Operação realizada com Sucesso!"
         );
         
+        txtId.setText("");
         txtNome.setText("");
         cbxSexo.setSelectedItem(0);
         cbxEscolaridade.setSelectedItem("");
