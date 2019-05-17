@@ -107,6 +107,11 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         scpProfissao.setViewportView(lstProfissao);
 
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +202,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovo)
                     .addComponent(btnSalvar))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabPrincipal.addTab("Cadastrar", new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_signup.png")), tabPesquisar); // NOI18N
@@ -290,22 +295,38 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         
-        //Adicionar dados na TABELA
         DefaultTableModel m =
                 (DefaultTableModel)tblClientes.getModel();
         
-        m.addRow(new Object[] {
-            m.getRowCount() + 1,                // Id
-            txtNome.getText(),                  // Nome
-            cbxSexo.getSelectedItem(),          // Sexo
-            cbxEscolaridade.getSelectedItem(),  // Escolaridade
-            lstProfissao.getSelectedValue(),    // Profissão
-            txtTelefoneFixo.getText(),          // Telefone Fixo
-            txtTelefoneCelular.getText(),       // Telefone Celular
-            txtEmail.getText(),                 // E-mail
-        });
+        if (txtId.getText().isEmpty()) {
+            //Adicionar dados na TABELA
+            m.addRow(new Object[] {
+                m.getRowCount() + 1,                // Id
+                txtNome.getText(),                  // Nome
+                cbxSexo.getSelectedItem(),          // Sexo
+                cbxEscolaridade.getSelectedItem(),  // Escolaridade
+                lstProfissao.getSelectedValue(),    // Profissão
+                txtTelefoneFixo.getText(),          // Telefone Fixo
+                txtTelefoneCelular.getText(),       // Telefone Celular
+                txtEmail.getText(),                 // E-mail
+            });
+        } else {
+            //Editar dados na TABELA
+            String id = txtId.getText();
+            int lin = 0;
+            while (!m.getValueAt(lin, 0).toString().equals(id)) {
+                lin++;
+            }
+            m.setValueAt(txtNome.getText(), lin, 1);                  // Nome
+            m.setValueAt(cbxSexo.getSelectedItem(), lin, 2);          // Sexo
+            m.setValueAt(cbxEscolaridade.getSelectedItem(), lin, 3);  // Escolaridade
+            m.setValueAt(lstProfissao.getSelectedValue(), lin, 4);    // Profissão
+            m.setValueAt(txtTelefoneFixo.getText(), lin, 5);          // Telefone Fixo
+            m.setValueAt(txtTelefoneCelular.getText(), lin, 6);       // Telefone Celular
+            m.setValueAt(txtEmail.getText(), lin, 7);                 // E-mail
+        }
         tblClientes.setModel(m);
-        
+
         JOptionPane.showMessageDialog(null,
                 "Operação realizada com Sucesso!"
         );
@@ -317,7 +338,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         txtTelefoneFixo.setText("");
         txtTelefoneCelular.setText("");
         txtEmail.setText("");
-        
+
         tabPrincipal.setSelectedIndex(1);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -336,6 +357,18 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             txtEmail.setText(tblClientes.getValueAt(lin, 7).toString());
         }
     }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        txtId.setText("");
+        txtNome.setText("");
+        cbxSexo.setSelectedItem(0);
+        cbxEscolaridade.setSelectedItem("");
+        lstProfissao.setSelectedIndex(0);
+        txtTelefoneFixo.setText("");
+        txtTelefoneCelular.setText("");
+        txtEmail.setText("");
+        txtNome.requestFocus();
+    }//GEN-LAST:event_btnNovoActionPerformed
 
     /**
      * @param args the command line arguments
