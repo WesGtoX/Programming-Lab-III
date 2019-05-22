@@ -5,6 +5,11 @@
  */
 package class21_2019_05_10;
 
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,6 +24,9 @@ import javax.swing.table.DefaultTableModel;
  * @author wesley
  */
 public class FormCadastroCliente extends javax.swing.JFrame {
+    
+    // List = java.util.List
+    private List<Cliente> dados;
 
     /**
      * Creates new form FormCadastroCliente
@@ -63,8 +71,10 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
         lblPesquisar = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JTextField();
         tabGerenciar = new javax.swing.JPanel();
+        btnExportar = new javax.swing.JButton();
+        btnImportar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,9 +148,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                             .addComponent(lblTelefoneCelular)
                             .addComponent(lblEmail)
                             .addGroup(tabPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                 .addComponent(txtTelefoneCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTelefoneFixo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(txtTelefoneFixo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addComponent(txtId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxSexo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabPesquisarLayout.createSequentialGroup()
@@ -227,7 +237,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         lblPesquisar.setText("Pesquisar");
 
-        jTextField1.setPreferredSize(new java.awt.Dimension(150, 25));
+        txtPesquisar.setPreferredSize(new java.awt.Dimension(150, 25));
 
         javax.swing.GroupLayout tabCadastrarLayout = new javax.swing.GroupLayout(tabCadastrar);
         tabCadastrar.setLayout(tabCadastrarLayout);
@@ -237,7 +247,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(tabCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtPesquisar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tabCadastrarLayout.createSequentialGroup()
                         .addComponent(lblPesquisar)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -249,7 +259,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblPesquisar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addContainerGap())
@@ -257,15 +267,39 @@ public class FormCadastroCliente extends javax.swing.JFrame {
 
         tabPrincipal.addTab("Pesquisar", new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_search.png")), tabCadastrar); // NOI18N
 
+        btnExportar.setText("Exportar");
+        btnExportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportarActionPerformed(evt);
+            }
+        });
+
+        btnImportar.setText("Importar");
+        btnImportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImportarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tabGerenciarLayout = new javax.swing.GroupLayout(tabGerenciar);
         tabGerenciar.setLayout(tabGerenciarLayout);
         tabGerenciarLayout.setHorizontalGroup(
             tabGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 446, Short.MAX_VALUE)
+            .addGroup(tabGerenciarLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addGroup(tabGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnExportar)
+                    .addComponent(btnImportar))
+                .addGap(189, 189, 189))
         );
         tabGerenciarLayout.setVerticalGroup(
             tabGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(tabGerenciarLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(btnExportar)
+                .addGap(57, 57, 57)
+                .addComponent(btnImportar)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         tabPrincipal.addTab("Gerenciar", new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_manage.png")), tabGerenciar); // NOI18N
@@ -298,6 +332,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         DefaultTableModel m =
                 (DefaultTableModel)tblClientes.getModel();
         
+        int lin = 0;
         if (txtId.getText().isEmpty()) {
             //Adicionar dados na TABELA
             m.addRow(new Object[] {
@@ -310,10 +345,10 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 txtTelefoneCelular.getText(),       // Telefone Celular
                 txtEmail.getText(),                 // E-mail
             });
+            lin = m.getRowCount() - 1;
         } else {
             //Editar dados na TABELA
             String id = txtId.getText();
-            int lin = 0;
             while (!m.getValueAt(lin, 0).toString().equals(id)) {
                 lin++;
             }
@@ -333,43 +368,121 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         
         txtId.setText("");
         txtNome.setText("");
-        cbxSexo.setSelectedItem(0);
-        cbxEscolaridade.setSelectedItem("");
+        cbxSexo.setSelectedIndex(0);
+        cbxEscolaridade.setSelectedIndex(0);
         lstProfissao.setSelectedIndex(0);
         txtTelefoneFixo.setText("");
         txtTelefoneCelular.setText("");
         txtEmail.setText("");
 
         tabPrincipal.setSelectedIndex(1);
+        
+        // Adcionar dados a Lista Dinâmica
+        Cliente cli = new Cliente(
+            m.getValueAt(lin, 0).toString(),            // Id
+            m.getValueAt(lin, 1).toString(),            // Nome
+            m.getValueAt(lin, 2).toString(),            // Sexo
+            m.getValueAt(lin, 3).toString(),            // Escolaridade
+            m.getValueAt(lin, 4).toString(),            // Profissão
+            m.getValueAt(lin, 5).toString(),            // Telefone Fixo
+            m.getValueAt(lin, 6).toString(),            // Telefone Celular
+            m.getValueAt(lin, 7).toString()             // E-mail
+        );
+        
+        if (dados.size() < m.getRowCount()) {
+            dados.add(cli);         // Adicionar um novo
+        } else {
+            dados.set(lin, cli);    // Alterar
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
         
         int lin = tblClientes.getSelectedRow();
         if (lin >= 0) {
-            
             txtId.setText(tblClientes.getValueAt(lin, 0).toString());
             txtNome.setText(tblClientes.getValueAt(lin, 1).toString());
-            cbxSexo.setSelectedItem(tblClientes.getValueAt(lin, 2).toString());
-            cbxEscolaridade.setSelectedItem(tblClientes.getValueAt(lin, 3).toString());
-            lstProfissao.setSelectedValue(tblClientes.getValueAt(lin, 4), true);
+            cbxSexo.setSelectedItem(tblClientes.getValueAt(lin, 2));
+            cbxEscolaridade.setSelectedItem(tblClientes.getValueAt(lin, 3));
+            lstProfissao.setSelectedValue(tblClientes.getValueAt(lin, 4),true);
             txtTelefoneFixo.setText(tblClientes.getValueAt(lin, 5).toString());
             txtTelefoneCelular.setText(tblClientes.getValueAt(lin, 6).toString());
             txtEmail.setText(tblClientes.getValueAt(lin, 7).toString());
+            
+            tabPrincipal.setSelectedIndex(0);
         }
     }//GEN-LAST:event_tblClientesMouseClicked
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         txtId.setText("");
         txtNome.setText("");
-        cbxSexo.setSelectedItem(0);
-        cbxEscolaridade.setSelectedItem("");
+        cbxSexo.setSelectedIndex(0);
+        cbxEscolaridade.setSelectedIndex(0);
         lstProfissao.setSelectedIndex(0);
         txtTelefoneFixo.setText("");
         txtTelefoneCelular.setText("");
         txtEmail.setText("");
         txtNome.requestFocus();
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
+        
+        try {
+            JsonWriter writer = new JsonWriter(
+                new FileWriter("/home/wesley/ESCOLA/FACULDADE/UNAERP/Stage 04 – 2019-1/Laboratório de Programação III/Aulas/Programming-Lab-III/LabIII_classes_GUI/src/files/dados.json")
+            );
+            
+            writer.beginArray();
+            for(Cliente cli : dados) {
+                new Gson().toJson(cli, Cliente.class, writer);
+            }
+            
+            writer.endArray();
+            writer.close();
+            
+        } catch (Exception e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnExportarActionPerformed
+
+    private void btnImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportarActionPerformed
+        
+        try {
+            JsonReader reader = new JsonReader(
+                new FileReader("/home/wesley/ESCOLA/FACULDADE/UNAERP/Stage 04 – 2019-1/Laboratório de Programação III/Aulas/Programming-Lab-III/LabIII_classes_GUI/src/files/dados.json")
+            );
+            
+            configurarTabela();
+            DefaultTableModel m = (DefaultTableModel)
+                    tblClientes.getModel();
+            
+            dados = new ArrayList<>();
+            reader.beginArray();
+            while(reader.hasNext()) {
+                Cliente cli = new Gson().fromJson(
+                        reader, Cliente.class
+                );
+                dados.add(cli);
+                
+                m.addRow(new Object[] {
+                    cli.getId(),
+                    cli.getNome(),
+                    cli.getSexo(),
+                    cli.getEscolaridade(),
+                    cli.getProfissao(),
+                    cli.getTelefoneFixo(),
+                    cli.getTelefoneCelular(),
+                    cli.getEmail()
+                });
+            }
+            
+            reader.endArray();
+            reader.close();
+            
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnImportarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,13 +520,14 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExportar;
+    private javax.swing.JButton btnImportar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxEscolaridade;
     private javax.swing.JComboBox<String> cbxSexo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEscolaridade;
     private javax.swing.JLabel lblId;
@@ -433,6 +547,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtPesquisar;
     private javax.swing.JTextField txtTelefoneCelular;
     private javax.swing.JTextField txtTelefoneFixo;
     // End of variables declaration//GEN-END:variables
@@ -451,6 +566,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         
         configurarTabela();
         txtId.setEditable(false);
+        
+        // Criar a lista dinâmica de clientes
+        dados = new ArrayList<>();
     }
     
     private void preencherComboSexo() {
@@ -506,15 +624,20 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         Collections.sort(lista);
         
         DefaultListModel m = new DefaultListModel();
-        for (String s : lista) {
-            m.addElement(s);
+        for (String u : lista) {
+            m.addElement(u);
         }
         lstProfissao.setModel(m);
         
-        //Definir o Modo de seleção
-        lstProfissao.setSelectedIndex(
-            ListSelectionModel.SINGLE_SELECTION
+        //Definir o modo de múltiplas seleções
+        lstProfissao.setSelectionMode(
+            ListSelectionModel.MULTIPLE_INTERVAL_SELECTION
         );
+        
+        //Definir o Modo de seleção
+//        lstProfissao.setSelectedIndex(
+//            ListSelectionModel.SINGLE_SELECTION
+//        );
     }
     
     private void configurarTabela() {
@@ -535,5 +658,4 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         m.addColumn("Email");
         tblClientes.setModel(m);
     }
-
 }
