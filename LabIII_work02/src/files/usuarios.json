@@ -1,0 +1,10 @@
+[
+  {
+    "login": "wesley",
+    "nome": "Wesley",
+    "sobrenome": "Mendes",
+    "senha": "123",
+    "confirmSenha": "123",
+    "perfil": "Administrador"
+  }
+]

@@ -118,3 +118,4 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 /LabIII_classes_GUI/dist/
+/LabIII_work02/dist/

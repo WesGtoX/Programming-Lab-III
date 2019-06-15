@@ -1,0 +1,92 @@
+[
+  {
+    "codigo": "0001",
+    "titulo": "Muito Longe de Casa",
+    "autor": "Ishmael Beah",
+    "ano": 2007,
+    "preco": 30,
+    "quantidade": 5,
+    "editora": "Atica"
+  },
+  {
+    "codigo": "0002",
+    "titulo": "Uma Breve História do Tempo",
+    "autor": "Stephen Hawking",
+    "ano": 2011,
+    "preco": 50,
+    "quantidade": 7,
+    "editora": "Casa do Código"
+  },
+  {
+    "codigo": "0003",
+    "titulo": "Uma Comovente Obra de Espantoso Talento",
+    "autor": "Dave Eggers",
+    "ano": 1984,
+    "preco": 75,
+    "quantidade": 10,
+    "editora": "Ediouro"
+  },
+  {
+    "codigo": "0004",
+    "titulo": "Os Segredos da Mente Milionária",
+    "autor": "T. Harv Eker",
+    "ano": 1982,
+    "preco": 35,
+    "quantidade": 20,
+    "editora": "Globo"
+  },
+  {
+    "codigo": "0005",
+    "titulo": "Mau Começo",
+    "autor": "Lemony Snicket",
+    "ano": 1980,
+    "preco": 45,
+    "quantidade": 15,
+    "editora": "Pearson"
+  },
+  {
+    "codigo": "0006",
+    "titulo": "Uma Dobra no Tempo",
+    "autor": "Madeleine L’Engle",
+    "ano": 1992,
+    "preco": 21.9,
+    "quantidade": 17,
+    "editora": "Planeta"
+  },
+  {
+    "codigo": "0007",
+    "titulo": "Selected Stories, 1968-1994",
+    "autor": "Alice Munro",
+    "ano": 2001,
+    "preco": 89,
+    "quantidade": 21,
+    "editora": "Record"
+  },
+  {
+    "codigo": "0008",
+    "titulo": "Alice",
+    "autor": "Lewis Carroll",
+    "ano": 2000,
+    "preco": 54.9,
+    "quantidade": 10,
+    "editora": "Santillana"
+  },
+  {
+    "codigo": "0009",
+    "titulo": "Todos os Homens do Presidente",
+    "autor": "Bob Woodward e Carl Bernstein",
+    "ano": 2010,
+    "preco": 30.5,
+    "quantidade": 20,
+    "editora": "Sextante"
+  },
+  {
+    "codigo": "0010",
+    "titulo": "As Cinzas de Angela: Memória",
+    "autor": "Frank McCourt",
+    "ano": 2015,
+    "preco": 17.9,
+    "quantidade": 30,
+    "editora": "United Press"
+  }
+]
